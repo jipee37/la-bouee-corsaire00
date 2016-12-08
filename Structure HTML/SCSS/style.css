@@ -1,6 +1,8 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box; }
 
+/*Déclaration variables couleurs*/
 body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
@@ -10,21 +12,56 @@ body {
   display: block; }
 
 .clearfix:after {
+<<<<<<< HEAD
   clear: both; }
+=======
+  clear: both; }*/
+h2 {
+  color: #CF6243; }
+>>>>>>> front
 
 /*-------------HEADER----------------*/
-header .navbar {
-  margin-bottom: 0; }
-header .btn-primary {
-  color: gray;
-  padding: 15px 16px;
-  background-color: transparent;
-  border: none; }
-header .btn-primary:hover {
-  color: gray;
-  background: none;
-  border: none; }
+header {
+  /*Hamburger*/
+  /*Hamburger - Barre*/
+  /*Liens navbar*/
+  /*Bouton Log In/Sign up*/
+  /*----------BACKGROUND FIXED------------------*/ }
+  header .navbar-default {
+    /*Couleur barre de navigation*/
+    margin-bottom: 0;
+    background-color: #93A567;
+    border-radius: 0;
+    border: none; }
+  header .navbar-default .navbar-brand {
+    color: white;
+    font-weight: 400; }
+  header .navbar-brand:hover {
+    color: white; }
+  header .navbar-toggle {
+    background-color: white; }
+  header .navbar-toggle .icon-bar {
+    background-color: #93A567; }
+  header .navbar-default .navbar-nav > li > a {
+    color: white; }
+  header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li > a:hover {
+    color: white; }
+  header .btn-default, header .btn-default {
+    background-color: transparent;
+    border-color: transparent;
+    color: white; }
+  header .btn-default:hover, header .btn-default:focus, header .btn-default:active {
+    background-color: transparent;
+    border-color: transparent;
+    color: white; }
+  header #image_background {
+    background-image: url("../images/colleagues.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
 
+<<<<<<< HEAD
 /*----------CAROUSEL------------------*/
 .slide1, .slide2, .slide3 {
   background-image: url("../images/black-and-white.jpg");
@@ -50,13 +87,47 @@ header .btn-primary:hover {
 footer {
   background-color: #B4DFF0; }
   footer ul, footer ul h3 {
+=======
+/*----------Explications-------------*/
+section {
+  padding-top: 25px; }
+  section h1 {
+    margin-bottom: 25px; }
+  section .col-md-3 img {
+    width: 50%; }
+
+/*----------FOOTER------------------*/
+footer {
+  background-color: #93A567;
+  padding-bottom: 0; }
+  footer .SocialMedia li {
+    display: inline-block; }
+  footer h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400; }
+  footer ul, footer ul h3 a {
+>>>>>>> front
     list-style-type: none;
-    color: currentColor; }
+    color: white; }
   footer ul li a {
-    color: currentColor;
+    color: white;
     text-decoration: none; }
   footer ul li a:hover {
+<<<<<<< HEAD
     text-decoration: none;
     color: currentColor; }
+=======
+    color: white; }
+  footer input[type="text"], footer input[type="mail"] {
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%; }
+  footer button.btn {
+    background-color: #CF6243; }
+  footer button.btn:focus, footer button.btn:hover {
+    background-color: #CF6243;
+    opacity: 1; }
+>>>>>>> front
 
 /*# sourceMappingURL=style.css.map */

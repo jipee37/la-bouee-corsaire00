@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -21,7 +21,7 @@ framework:
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale:  "%locale%"
+    default_locale:  fr
     trusted_hosts:   ~
     trusted_proxies: ~
     session:
@@ -89,5 +89,5 @@ assetic:
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
         lessphp:
-            file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
+            file: "%kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php"
         jsqueeze: ~

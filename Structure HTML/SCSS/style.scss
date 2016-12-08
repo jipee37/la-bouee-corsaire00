@@ -1,82 +1,130 @@
 * {
   box-sizing: border-box; }
+  /*Déclaration variables couleurs*/
+  $navbar_fond:#93A567 ;
+  $body_fond: #D4CC8E;
+  $input_border:#CF6243;
+  $text_color: white;
 
 body{
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif;
 }
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: block; }
 
-.clearfix:after {
-  clear: both; }
+  h2{
+    color: #CF6243;
+  }
 
 /*-------------HEADER----------------*/
 header{
-  .navbar{
+  .navbar-default{
+    /*Couleur barre de navigation*/
     margin-bottom: 0;
-  }
-  .btn-primary{
-    color: gray;
-    padding: 15px 16px;
-    background-color: transparent;
-    border:none ;
-  }
-  .btn-primary:hover{
-    color: gray;
-    background: none;
-    border: none ;
+    background-color: $navbar_fond;
+    border-radius: 0;
+    border:none;
   }
 
+  .navbar-default .navbar-brand {
+    color: $text_color;
+    font-weight: 400;
 }
-/*----------CAROUSEL------------------*/
+  .navbar-brand:hover{
+    color: $text_color;
+  }
+    /*Hamburger*/
+    .navbar-toggle{
+      background-color: $text_color;
+    }
+    /*Hamburger - Barre*/
+  .navbar-toggle .icon-bar{
+    background-color: $navbar_fond;
+    }
+    /*Liens navbar*/
+    .navbar-default .navbar-nav > li > a{
+     color: $text_color;
+    }
 
-  .slide1, .slide2, .slide3 {
-    background-image: url('../images/black-and-white.jpg');
+  .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+    color: $text_color;
+    }
+
+    /*Bouton Log In/Sign up*/
+  .btn-default, .btn-default{
+    background-color: transparent;
+    border-color: transparent;
+    color: $text_color;
+  }
+
+  .btn-default:hover, .btn-default:focus, .btn-default:active{
+    background-color: transparent;
+    border-color: transparent;
+    color: $text_color;
+  }
+
+
+/*----------BACKGROUND FIXED------------------*/
+
+  #image_background {
+    background-image: url('../images/colleagues.jpg');
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
+}
 
-  .slide2 {
-    background-image: url('../images/colleagues.jpg');
+/*----------Explications-------------*/
+section{
+  padding-top: 25px;
+  h1{
+    margin-bottom: 25px;
   }
-
-  .slide3 {
-    background-image: url('../images/woman-at-sunset.jpg');
-  }
-
-  .carousel-caption {
-    
-    h1 {
-    font-size: 5.4em;
-    font-family: 'Pacifico', cursive;
-    padding-bottom: .4em;
-    }
-
-    p {
-    font-size: 2em;
-    }
-  }
-
-/*----------FOOTER------------------*/
-footer{
-    
-  background-color: #B4DFF0;
-  
-  ul, ul h3{
-    list-style-type: none;
-    color: currentColor;
-  }
-  ul li a{
-    color: currentColor;
-    text-decoration: none;
-  }
-  ul li a:hover{
-  text-decoration: none;
-  color: currentColor;
+  .col-md-3 img{
+    width: 50%;
   }
 }
 
+/*----------FOOTER------------------*/
+footer{
+
+background-color:$navbar_fond;
+padding-bottom: 0;
+
+.SocialMedia li{
+display: inline-block;
+}
+
+
+  h3{
+  color: white;
+  font-size: 20px;
+  font-weight:400;
+  }
+
+  ul, ul h3 a{
+    list-style-type: none;
+    color: white;
+  }
+
+  ul li a{
+    color: white;
+    text-decoration: none;
+  }
+  ul li a:hover{
+    color: white;
+    text-decoration: none;
+  }
+  input[type="text"],input[type="mail"]{
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%;
+  }
+  button.btn{
+    background-color:$input_border;
+  }
+   button.btn:focus, button.btn:hover{
+    background-color:$input_border;
+    opacity: 1;
+  }
+  }

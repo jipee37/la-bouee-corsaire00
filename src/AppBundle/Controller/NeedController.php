@@ -13,7 +13,7 @@
 		
 		/**
 		 *
-		 * @Route("/need/show/{id}")
+		 * @Route("/need/show/{id}", name="need_show")
 		 *
 		 */
 		public function showAction(Request $request, $id) {
@@ -76,11 +76,10 @@
 				$em->persist($need);
 				$em->flush();
 				
-				//TODO creation confirmation page
-				return new Response('<p>Saved new Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
+				return $this->redirectToRoute('need_show', array('id' => $need->getId()));
 			}
 			
-			return $this->render('user/need_new.html.twig', array(
+			return $this->render('need/new.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
@@ -93,7 +92,7 @@
 		public function listAction() {
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Need');
 			$needs = $repository->findAll();
-			return $this->render('need/need_list.html.twig', array(
+			return $this->render('need/list.html.twig', array(
 				'needs' => $needs,
 			));
 		}
@@ -148,7 +147,7 @@
 				return new Response('<p>Saved modifications to Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
 			
-			return $this->render('user/need_edit.html.twig', array(
+			return $this->render('need/edit.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}

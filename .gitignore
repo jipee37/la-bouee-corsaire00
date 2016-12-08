@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /build/
+/phpunit
 /phpunit.xml
 /var/*
 !/var/cache
@@ -14,3 +15,4 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+**/.sass-cache/

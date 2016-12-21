@@ -16,43 +16,42 @@ a:hover {
 
 /*-------------HEADER----------------*/
 header {
-  /*Hamburger*/
-  /*Bouton Log In/Sign up*/
-  /*Hamburger - Barre*/
-  /*Liens navbar*/
   /*----------BACKGROUND FIXED------------------*/ }
   header .navbar-default {
     /*Couleur barre de navigation*/
-    margin-bottom: 0;
-    background-color: #93A567;
+    background-color: #fafafa;
     border-radius: 0;
-    border: none; }
-  header .navbar-default .navbar-brand {
-    color: white;
-    font-weight: 400; }
-  header .navbar-brand:hover {
-    color: white; }
-  header .navbar-default .navbar-brand:hover {
-    color: white; }
-  header .navbar-toggle {
-    background-color: white; }
-  header .btn-default {
-    background-color: transparent;
-    border-color: transparent;
-    color: white; }
-  header .navbar-toggle .icon-bar {
-    background-color: #93A567; }
-  header .navbar-default .navbar-nav > li > a {
-    color: white; }
+    border: none;
+    margin-bottom: 0;
+    /*Hamburger*/
+    /*Hamburger - Barre*/
+    /*Liens navbar*/
+    /*Bouton Log In/Sign up*/ }
+    header .navbar-default .navbar-toggle {
+      background-color: #19b9e7; }
+    header .navbar-default .navbar-toggle .icon-bar {
+      background-color: #fafafa; }
+    header .navbar-default .navbar-brand {
+      color: #000;
+      font-weight: 400; }
+    header .navbar-default .navbar-brand:hover {
+      color: orange; }
+    header .navbar-default .navbar-nav > li > a {
+      color: #19b9e7; }
+    header .navbar-default .btn-default {
+      background-color: transparent;
+      border-color: transparent; }
+    header .navbar-default .btn-default:hover {
+      background-color: orange; }
   header .navbar-default .navbar-nav > li > a:focus,
   header .navbar-default .navbar-nav > li > a:hover {
-    color: white; }
+    color: orange; }
   header .btn-default:active,
   header .btn-default:focus,
   header .btn-default:hover {
     background-color: transparent;
     border-color: transparent;
-    color: white; }
+    color: #000; }
   header #image_background {
     background-image: url("../images/colleagues.jpg");
     height: 75vh;
@@ -85,43 +84,38 @@ hr {
 
 /*-----------Actualités des besoins/services---*/
 .list-group-item {
-  border: 1px solid #CF6243; }
+  border: 1px solid #000; }
 
 .list-group-item.active,
 .list-group-item.active:hover {
-  background-color: #93A567;
-  border-color: #CF6243; }
+  background-color: #fafafa;
+  border-color: #000; }
 
 a.list-group-item:hover {
-  background-color: #93A567;
-  border-color: #CF6243;
-  color: white; }
+  background-color: #fafafa;
+  border-color: #000;
+  color: orange; }
 
 /*----------FOOTER------------------*/
 footer {
-  background-color: #93A567;
+  background-color: #dfdfdf;
   padding-bottom: 0; }
   footer .SocialMedia li {
     display: inline-block; }
   footer h3 {
-    color: white;
+    color: #000;
     font-size: 20px;
     font-weight: 400; }
-    footer h3 a {
-      color: white; }
-    footer h3 a:hover {
-      color: white; }
+  footer a {
+    color: #000;
+    text-decoration: none; }
+    footer a:hover {
+      color: orange; }
   footer ul {
     list-style-type: none;
-    color: white; }
-  footer .btn-primary, footer .btn-primary:hover, footer .btn-primary:focus, footer .btn-primary:active {
-    background-color: #CF6243;
-    border: none; }
+    color: #000; }
   footer ul li a {
-    color: white;
-    text-decoration: none; }
-  footer ul li a:hover {
-    color: white;
+    color: #000;
     text-decoration: none; }
   footer input[type="mail"],
   footer input[type="text"] {
@@ -129,17 +123,11 @@ footer {
     height: 34px;
     width: 65%; }
   footer button.btn {
-    background-color: #CF6243;
+    background-color: #19b9e7;
     border: none; }
   footer button.btn:focus,
   footer button.btn:hover {
-    background-color: #CF6243;
+    background-color: orange;
     opacity: 1; }
-  footer .btn-primary,
-  footer .btn-primary:active,
-  footer .btn-primary:focus,
-  footer .btn-primary:hover {
-    background-color: #CF6243;
-    border: none; }
 
 /*# sourceMappingURL=style.css.map */

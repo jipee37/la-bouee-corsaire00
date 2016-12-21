@@ -1,11 +1,13 @@
 * {
     box-sizing: border-box;
 }
+
 /*Déclaration variables couleurs*/
-$navbar_fond: #93A567;
-$body_fond: #D4CC8E;
-$input_border: #CF6243;
-$text_color: white;
+$navbar_fond: #fafafa;
+$footer_fond: #dfdfdf;
+$icon_color: #19b9e7; //bleu-ciel
+$hover: orange;
+$text_color: #000;
 
 body {
     font-family: 'PT Sans', sans-serif;
@@ -22,52 +24,52 @@ a:hover {
 }
 /*-------------HEADER----------------*/
 header {
-    .navbar-default {
+      .navbar-default{
         /*Couleur barre de navigation*/
-        margin-bottom: 0;
         background-color: $navbar_fond;
         border-radius: 0;
-        border: none;
-    }
+        border:none;
+        margin-bottom: 0;
 
-    .navbar-default .navbar-brand {
-        color: $text_color;
-        font-weight: 400;
-    }
 
-    .navbar-brand:hover {
-        color: $text_color;
-    }
+        /*Hamburger*/
+        .navbar-toggle{
+          background-color: $icon_color;
+        }
 
-    .navbar-default .navbar-brand:hover {
-        color: $text_color;
-    }
-    /*Hamburger*/
-    .navbar-toggle {
-        background-color: $text_color;
-    }
+        /*Hamburger - Barre*/
+      .navbar-toggle .icon-bar{
+        background-color: $navbar_fond;
+        }
 
-    /*Bouton Log In/Sign up*/
-    .btn-default{
+        .navbar-brand{
+          color: $text_color;
+          font-weight: 400;
+        }
+
+        .navbar-brand:hover{
+          color: $hover;
+        }
+
+        /*Liens navbar*/
+        .navbar-nav > li > a{
+          color: $icon_color  ;
+        }
+
+        /*Bouton Log In/Sign up*/
+      .btn-default{
         background-color: transparent;
         border-color: transparent;
-        // border: none;
-        color: $text_color;
-    }
+      }
+      .btn-default:hover{
+        background-color: $hover;
+      }
+      }
 
-    /*Hamburger - Barre*/
-    .navbar-toggle .icon-bar {
-        background-color: $navbar_fond;
-    }
-
-    /*Liens navbar*/
-    .navbar-default .navbar-nav > li > a {
-        color: $text_color;
-    }
 
     .navbar-default .navbar-nav > li > a:focus,
     .navbar-default .navbar-nav > li > a:hover {
-        color: $text_color;
+        color: $hover;
     }
 
     .btn-default:active,
@@ -120,65 +122,56 @@ section {
       height: 1px;
       border: none;
       }
+
 /*-----------Actualités des besoins/services---*/
 .list-group-item{
-    border:1px solid $input_border;
+    border:1px solid $text_color;
 }
 
 .list-group-item.active,
 .list-group-item.active:hover {
     background-color: $navbar_fond;
-    border-color: $input_border;
+    border-color: $text_color;
 }
 
 
 a.list-group-item:hover {
     background-color: $navbar_fond;
-    border-color: $input_border;
-    color: $text_color;
+    border-color: $text_color;
+    color: $hover;
 }
 
 /*----------FOOTER------------------*/
 
 footer{
-  background-color:$navbar_fond;
+  background-color:$footer_fond;
   padding-bottom: 0;
 
   .SocialMedia li{
   display: inline-block;
   }
 
+
   h3{
   color: $text_color;
   font-size: 20px;
   font-weight:400;
-
-a{
-  color: $text_color;
 }
+    a{
+      color: $text_color;
+      text-decoration: none;
+       &:hover {
+         color: $hover;
+       }
+    }
 
-a:hover{
-  color: $text_color;
-}
-  }
 
   ul{
     list-style-type: none;
-    color: $text_color;
+    color:$text_color;
   }
 
-
-.btn-primary,.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-      background-color:$input_border;
-      border:none;
-}
-
     ul li a {
-        color: $text_color;
-        text-decoration: none;
-    }
-
-    ul li a:hover {
         color: $text_color;
         text-decoration: none;
     }
@@ -191,21 +184,14 @@ a:hover{
     }
 
     button.btn {
-        background-color: $input_border;
+        background-color: $icon_color;
         border: none;
     }
 
     button.btn:focus,
     button.btn:hover {
-        background-color: $input_border;
+        background-color: $hover;
         opacity: 1;
     }
 
-    .btn-primary,
-    .btn-primary:active,
-    .btn-primary:focus,
-    .btn-primary:hover {
-        background-color: $input_border;
-        border: none;
-    }
 }

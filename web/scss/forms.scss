@@ -1,6 +1,6 @@
 /*Déclaration variables couleurs*/
-$navbar_fond:#93A567;
-$body_fond: #D4CC8E;
+// $navbar_fond:fafafa;
+// $body_fond: #D4CC8E;
 $input_border:#19b9e7;
 
 body{
@@ -70,10 +70,10 @@ input[type="text"]:focus, input[type="password"]:focus{
 
 /*----------AIDE---------*/
 .show-forms{ /*Couleur text/log in Sign up*/
-  color: black;
+  color: orange;
   font-size: 2em;
   a:hover{
-    border-color: red;
+    border-color: orange;
   }
 }
 

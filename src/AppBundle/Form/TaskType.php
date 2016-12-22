@@ -6,7 +6,7 @@
 	use Symfony\Component\Form\FormBuilderInterface;
 	use Symfony\Component\OptionsResolver\OptionsResolver;
 	
-	class ServiceType extends AbstractType {
+	class TaskType extends AbstractType {
 		
 		/**
 		 * @var string
@@ -16,7 +16,7 @@
 		/**
 		 * @param string $class
 		 */
-		public function __construct($class = 'AppBundle\Entity\Service') {
+		public function __construct($class = 'AppBundle\Entity\Task') {
 			$this->class = $class;
 		}
 		

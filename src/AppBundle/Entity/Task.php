@@ -2,14 +2,15 @@
 	
 	namespace AppBundle\Entity;
 	
-	use AppBundle\DBAL\Types\TaskStatusType;
+	use AppBundle\DBAL\Types\TaskLevelType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
 	use Symfony\Component\Validator\Constraints as Assert;
 	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 	
 	/**
-	 * @ORM\MappedSuperclass
+	 * @ORM\Entity
+	 * @ORM\Table(name="tasks")
 	 */
 	class Task {
 		/**
@@ -84,13 +85,12 @@
 		/**
 		 * Task status
 		 *
-		 * @ORM\Column(type="TaskStatusType", nullable=false, options={"default"="OP"})
-		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskStatusType")
+		 * @ORM\Column(type="boolean")
 		 *
-		 * @var    enum
+		 * @var    boolean
 		 * @access protected
 		 */
-		protected $status;
+		protected $enabled;
 		
 		/**
 		 * User who created the Task
@@ -119,6 +119,17 @@
 		 * @access protected
 		 */
 		protected $date;
+		
+		/**
+		 * Level of the User providing the service
+		 *
+		 * @ORM\Column(type="TaskLevelType", nullable=false, options={"default"="0"})
+		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
+		 *
+		 * @var    enum $level
+		 * @access protected
+		 */
+		protected $level;
 		
 		/**
 		 * Get id
@@ -153,7 +164,7 @@
 		 *
 		 * @return string
 		 */
-		public function getStatus() { return $this->status; }
+		public function getEnabled() { return $this->enabled; }
 		
 		/**
 		 * Get User
@@ -168,6 +179,13 @@
 		 * @return Category
 		 */
 		public function getCategory() { return $this->category; }
+		
+		/**
+		 * Get level
+		 *
+		 * @return string
+		 */
+		public function getLevel() { return $this->level; }
 		
 		/**
 		 * Set title
@@ -224,23 +242,14 @@
 		}
 		
 		/**
-		 * Set status
+		 * Set status (enabled/disabled)
 		 *
 		 * @param string
 		 *
 		 * @return Task
 		 */
-		public function setStatus($status) {
-			switch ($status) {
-				case 'OP':
-				case 'PE':
-				case 'VA':
-				case 'DO':
-				case 'DI':
-					$this->status = $status;
-					break;
-			}
-			
+		public function setEnabled($enabled) {
+			$this->enabled = $enabled;
 			return $this;
 		}
 		
@@ -266,29 +275,38 @@
 			return $this;
 		}
 		
+		/**
+		 * Set level
+		 *
+		 * @param string
+		 *
+		 * @return Task
+		 */
+		public function setLevel($level) {
+			switch ($level) {
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+					$this->level = $level;
+					break;
+			}
+			
+			return $this;
+		}
+		
 		public function isDisabled() {
-			return ($this->getStatus() === 'DI');
+			return (!$this->getEnabled());
 		}
 		
 		public static function fromArray($array) {
 			$task = new static();
-			
-			if (isset($array['title'])) {
-				$task->setTitle($array['title']);
+			foreach ($array as $key => $value) {
+				$method = 'set'.ucfirst($key);
+				if (method_exists($task, $method)) {
+					$task->$method($value);
+				}
 			}
-			
-			if (isset($array['description'])) {
-				$task->setDescription($array['description']);
-			}
-			
-			if (isset($array['location'])) {
-				$task->setLocation($array['location']);
-			}
-			
-			if (isset($array['status'])) {
-				$task->setStatus($array['status']);
-			}
-			
 			return $task;
 		}
 		

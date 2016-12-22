@@ -2,12 +2,12 @@
 	
 	namespace Tests\AppBundle\Form;
 	
-	use AppBundle\Form\ServiceType;
-	use AppBundle\Entity\Service;
+	use AppBundle\Form\TaskType;
+	use AppBundle\Entity\Task;
 	use Symfony\Component\Form\PreloadedExtension;
 	use Symfony\Component\Form\Test\TypeTestCase;
 	
-	class ServiceTypeTest extends TypeTestCase {
+	class TaskTypeTest extends TypeTestCase {
 		
 		private $entityManager;
 		
@@ -17,7 +17,7 @@
 		}
 		
 		protected function getExtensions() {
-			$type = new Service($this->entityManager);
+			$type = new Task($this->entityManager);
 			
 			return array(
 				new PreloadedExtension(array($type), array()),
@@ -29,18 +29,18 @@
 			$formData = array(
 				'title'       => 'Test',
 				'location'    => 'Rennes',
-				'level'       => '1',
+				'level'       => '0',
 				'description' => 'Hello World!',
 			);
 			
-			$form = $this->factory->create(ServiceType::class);
+			$form = $this->factory->create(TaskType::class);
 			
-			$service = Service::fromArray($formData);
+			$task = Task::fromArray($formData);
 			
 			$form->submit($formData);
 			
 			$this->assertTrue($form->isSynchronized());
-			$this->assertEquals($service, $form->getData());
+			$this->assertEquals($task, $form->getData());
 			
 			$view = $form->createView();
 			$children = $view->children;

@@ -12,6 +12,7 @@ $text_color: #000;
 body {
     font-family: 'PT Sans', sans-serif;
     font-family: 'PT Serif', serif;
+    // background-color: #19b9e7;
 }
 
 h2 {
@@ -31,6 +32,19 @@ header {
         border:none;
         margin-bottom: 0;
 
+.navbar-brand img {
+  display: inline-block;
+  position: relative;
+  top: -.65em;
+  height:290%;
+}
+
+.navbar-brand p {
+  display: inline-block;
+  position: relative;
+  top: -.50em;
+  padding-left: 1em;
+}
 
         /*Hamburger*/
         .navbar-toggle{
@@ -83,13 +97,20 @@ header {
 
 #image_background{
   background-image: url('../images/colleagues.jpg');
-  height: 75vh;
+  height: 95vh;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
 }
+
+/*----------Search bar-------------*/
+.col-xs-7{
+  margin-left: 0;
+}
+
+
 .form-control, .btn{
   padding: 7px 15px;
   height: 41px;

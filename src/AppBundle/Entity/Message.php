@@ -67,12 +67,32 @@
 		/**
 		 * Associated Transaction
 		 *
-		 * @ORM\ManyToOne(targetEntity="Transaction", inversedBy="message")
+		 * @ORM\ManyToOne(targetEntity="Transaction", inversedBy="messages")
 		 *
 		 * @var    Transaction $transaction
 		 * @access private
 		 */
 		protected $transaction;
+
+		/**
+		 * Estimated duration of the associated Task
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float $duration
+		 * @access protected
+		 */
+		protected $duration;
+
+		/**
+		 * Tells whether the associated Transaction should be validated
+		 *
+		 * @ORM\Column(type="boolean", options={"default"=false})
+		 *
+		 * @var    boolean
+		 * @access protected
+		 */
+		protected $validation;
 
 		/**
 		 * Get id
@@ -115,6 +135,20 @@
 		 * @return Transaction
 		 */
 		public function getTransaction() { return $this->transaction; }
+
+		/**
+		 * Get estimated duration of the associated Task
+		 *
+		 * @return float
+		 */
+		public function getDuration() { return $this->duration; }
+
+		/**
+		 * Get whether the associated Transaction should be validated
+		 *
+		 * @return boolean
+		 */
+		public function getValidation() { return $this->validation; }
 
 		/**
 		* Set content
@@ -174,6 +208,44 @@
 		public function setTransaction(Transaction $transaction = null) {
 			$this->transaction = $transaction;
 			return $this;
+		}
+
+		/**
+		 * Set estimated duration of the associated Task
+		 *
+		 * @param float
+		 *
+		 * @return Transaction
+		 */
+		public function setDuration($duration) {
+			$duration = (float) $duration;
+			if ($duration >= 0) {
+				$this->duration = $duration;
+			}
+			return $this;
+		}
+
+		/**
+		 * Get whether the associated Transaction should be validated
+		 *
+		 * @param boolean
+		 *
+		 * @return Message
+		 */
+		public function setValidation($validation) {
+			$this->validation = $validation;
+			return $this;
+		}
+
+		public static function fromArray($array) {
+			$message = new static();
+			foreach ($array as $key => $value) {
+				$method = 'set'.ucfirst($key);
+				if (method_exists($message, $method)) {
+					$message->$method($value);
+				}
+			}
+			return $message;
 		}
 
 	}

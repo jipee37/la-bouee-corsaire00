@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ message.transaction.task.title }}{% endblock %}
+
+{% block body %}
+
+	<a href="/task/show/{{ message.transaction.task.id }}">
+		<h1>{{ block('title') }}</h1>
+	</a>
+
+	<div class='panel panel-default'>
+		<div class="panel-heading">Message envoyé à {{ message.dest }} par {{ message.author }}</div>
+		<div class="panel-body">
+			<p>{{ message.content }}</p>
+		</div>
+	</div>
+
+	{% if user == message.dest %}
+		<a class='btn btn-default' href='/message/answer/{{ message.id }}'>Répondre</a>
+	{% endif %}
+
+	<a href="/message/list" class="btn btn-default">Messagerie</a>
+
+{% endblock %}

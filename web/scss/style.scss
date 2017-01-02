@@ -1,9 +1,16 @@
+
 /*Déclaration variables couleurs*/
-$navbar_fond: #fafafa;
-$footer_fond: #dfdfdf;
-$input_border: #19b9e7;
+// $navbar_fond: #fafafa;
+// $footer_fond: #dfdfdf;
+// $input_border: #19b9e7;
+
+/* global colors */
+$navbar_fond: #fff;
+$input_border:#19b9e7;
+
 $text_color: #000;
 $hover: orange;
+
 
 body {
     background-color: $navbar_fond;
@@ -100,4 +107,99 @@ footer {
         background-color: $input_border;
         opacity: 1;
     }
+
+/* default value for box-shadow */
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+/* background image for top part of home page */
+$home-background: url('../images/colleagues.jpg');
+
+/* search bar on home page */
+.home-search {
+	background-image: $home-background;
+	height: 75vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+body {
+	background-color: $navbar_fond;
+}
+
+/* top navigation bar */
+.navbar-default{
+	margin-bottom: 0;
+	background-color: $navbar_fond;
+	border-radius: 0;
+	border:none;
+	box-shadow: $shadow;
+	.navbar-toggle {
+		background-color: $input_border;
+	}
+	.navbar-toggle .icon-bar {
+		background-color: $navbar_fond;
+	}
+	.navbar-brand {
+		color: $text_color;
+		font-weight: 400;
+	}
+	.navbar-brand:hover {
+		color: $input_border;
+	}
+	.navbar-nav > li > a {
+		color: $input_border;
+	}
+	.btn-primary {
+		background-color: transparent;
+		border-color: transparent;
+	}
+}
+
+/*----------FOOTER------------------*/
+footer{
+  background-color:$navbar_fond;
+  margin-top: 25px;
+  padding-bottom: 0;
+.SocialMedia li{
+  display: inline-block;
+}
+h3{
+  color: $text_color;
+  font-size: 20px;
+  font-weight:400;
+}
+  ul, ul h3 a{
+    list-style-type: none;
+    color:$text_color;
+  }
+  ul li a{
+    color: $text_color;
+    text-decoration: none;
+  }
+  ul li a:hover{
+    color: $text_color;
+  }
+  input[type="text"],input[type="mail"]{
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%;
+  }
+
+  input.form-control{
+    margin-left: 60px;
+  }
+  button.btn{
+    background-color:$input_border;
+    width: 65%;
+  }
+   button.btn:focus, button.btn:hover{
+    background-color:$input_border;
+    opacity: 1;
+  }
+
 }
